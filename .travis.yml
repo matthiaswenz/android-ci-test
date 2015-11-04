@@ -16,4 +16,12 @@ android:
     - extra-google-m2repository
     - extra-android-m2repository
 
-script: ./gradlew assemble lint
+script:
+  - ./gradlew assemble lint
+
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
